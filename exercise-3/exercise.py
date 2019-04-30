@@ -3,6 +3,15 @@
 # Define a function `print_hot_or_cold()` that takes in two arguments (the 
 # `target` and the `guess`), and prints out an appropriate message based on 
 # how close the guess is to the target:
+
+def print_hot_or_cold(target, guess)
+    if guess == target:
+        print("Bullseye!")
+    elif target-10 < guess < target or target < guess < target+10:
+        print("So close!")
+    else:
+        print("Missed!")
+
 #
 # Distance    Message
 # -------------------
