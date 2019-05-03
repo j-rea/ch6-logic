@@ -18,7 +18,12 @@
 # Be sure to consider both positive AND negative distances!
 # BONUS: Also print out whether the guess is high or low
 
+import random
+target = random.randint(1, 50)
+
 def print_hot_or_cold(target, guess):
+    """Prints approximate distance between guess and target.  Target will be selected at random.
+    User will input a guess."""
     if (guess == target):
         print("got it!")
     elif(target-1 < guess < target) or (target < guess < target+1):
@@ -63,12 +68,19 @@ def print_hot_or_cold(target, guess):
 # and prompts the user for a guess using the `input()` method. Your function should
 # then print how close the user's guess is to that target (use your previous 
 # function!). Note that you will need to convert the input into a number.
-#
+
 # Once you have a single guess working, modify your function so that the user can
 # make MULTIPLE guesses. You can either do this using a loop (see the next chapter)
 # or by simply calling your `guess_number() method again IF the user didn't get
 # the answer right. The later is an example of **recursion**.
 
+def guess_number(target):
+    """Prompts user for a guess and passes the guess to hot_or_cold.  
+    Will prompt user again if guess is not the target."""
+    guess = int(input("Pick a number from 1 to 50: "))
+    print(print_hot_or_cold(target, guess))
+    if guess != target:
+        guess_number(target)
 
 
 # If the file is run as a top-level script, your script should pick a random number
