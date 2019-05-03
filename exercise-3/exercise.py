@@ -1,18 +1,10 @@
+#!/usr/bin/env bash 
 # This script contains a program for a simple guessing game!
 
 # Define a function `print_hot_or_cold()` that takes in two arguments (the 
 # `target` and the `guess`), and prints out an appropriate message based on 
 # how close the guess is to the target:
 
-def print_hot_or_cold(target, guess)
-    if guess == target:
-        print("Bullseye!")
-    elif target-10 < guess < target or target < guess < target+10:
-        print("So close!")
-    else:
-        print("Missed!")
-
-#
 # Distance    Message
 # -------------------
 # The same    "got it!"
@@ -26,6 +18,45 @@ def print_hot_or_cold(target, guess)
 # Be sure to consider both positive AND negative distances!
 # BONUS: Also print out whether the guess is high or low
 
+def print_hot_or_cold(target, guess):
+    if (guess == target):
+        print("got it!")
+    elif(target-1 < guess < target) or (target < guess < target+1):
+        print("scalding hot")
+        if target<guess<target+1:
+            print("guess is high")
+        else:
+            print("guess is low")
+    elif(target-3 < guess < target) or (target < guess < target+3):
+        print("very warm")
+        if target<guess<target+3:
+            print("guess is high")
+        else:
+            print("guess is low")        
+    elif(target-5 < guess < target) or (target < guess < target+5):
+        print("warm")
+        if target<guess<target+5:
+            print("guess is high")
+        else:
+            print("guess is low")        
+    elif(target-8 < guess < target) or (target < guess < target+8):
+        print("cold")
+        if target<guess<target+8:
+            print("guess is high")
+        else:
+            print("guess is low")
+    elif(target-13 < guess < target) or (target < guess < target+13):
+        print("very cold")
+        if target<guess<target+13:
+            print("guess is high")
+        else:
+            print("guess is low")
+    else:
+        print("icy freezing and miserably cold")
+        if guess>target+13:
+            print("guess is high")
+        else:
+            print("guess is low")        
 
 
 # Define a function `guess_number()` that takes a single argument (a target number)
